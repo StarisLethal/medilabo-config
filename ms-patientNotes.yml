@@ -24,14 +24,15 @@ eureka:
       defaultZone: http://localhost:9502/eureka
 
 symptoms:
-  fume: "fume(ur|use|r)?"
-  hemoglobine: "hémoglobine a1c"
-  microalbumine: "microalbumine"
-  taille: "taille"
-  poids: "poids(?!\\s+(égal ou inférieur|recommandé))"
-  anormal: "anormal"
-  cholesterol: "cholestérol"
-  vertige: "vertige(s)?"
-  rechute: "rechute"
-  reaction: "réaction"
-  anticorps: "anticorps"
+  dictionary:
+    fume: "fume(ur|use|r)?"
+    hemoglobine: "hémoglobine a1c"
+    microalbumine: "microalbumine"
+    taille: "taille"
+    poids: "poids(?!\\s+(égal ou inférieur|recommandé))"
+    anormal: "anormal"
+    cholesterol: "cholestérol"
+    vertige: "vertige(s)?"
+    rechute: "rechute"
+    reaction: "réaction"
+    anticorps: "anticorps"
