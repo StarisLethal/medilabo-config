@@ -25,13 +25,13 @@ eureka:
 
 symptoms:
   fume: "fume(ur|use|r)?"
-  hemoglobine: "hémoglobine a1c"
+  hemoglobine: "hÃ©moglobine a1c"
   microalbumine: "microalbumine"
   taille: "taille"
-  poids: "poids(?!\\s+(égal ou inférieur|recommandé))"
+  poids: "poids(?!\\s+(Ã©gal ou infÃ©rieur|recommandÃ©))"
   anormal: "anormal"
-  cholesterol: "cholestérol"
+  cholesterol: "cholestÃ©rol"
   vertige: "vertige(s)?"
   rechute: "rechute"
-  reaction: "réaction"
+  reaction: "rÃ©action"
   anticorps: "anticorps"
