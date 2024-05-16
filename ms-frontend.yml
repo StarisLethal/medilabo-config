@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    discovery:
+      enabled: true
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9502/eureka
+
+  security:
+    oauth2:
+      client:
+        registration:
+          my-client:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: openid,read,write
+        provider:
+          your-provider:
+            authorization-uri: ${AUTHORIZATION_URI}
+            token-uri: ${TOKEN_URI}
+            user-info-uri: ${USER_INFO_URI}
+            user-name-attribute: sub
