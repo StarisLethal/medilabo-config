@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: ms-gateway
+
+  cloud:
+    gateway:
+      discovery:
+        enabled: true
+        locator:
+          enabled: true
+          lower-case-service-id: false
+      routes:
+        - id: MS-AUTHSERV
+          uri: lb://MS-AUTHSERV
+          predicates:
+            - Path=/auth/**
+        - id: MS-PATIENTS
+          uri: lb://MS-PATIENTS
+          predicates:
+            - Path=/patients/**
+          filters:
+            - PrefixPath=/api/v1
+            - AuthenticationFilter
+        - id: MS-PATIENTNOTES
+          uri: lb://MS-PATIENTNOTES
+          predicates:
+            - Path=/patientNotes/**
+          filters:
+            - PrefixPath=/api/v1
+            - AuthenticationFilter
+        - id: MS-FRONTEND
+          uri: lb://MS-FRONTEND
+          predicates:
+            - Path=/ms-frontend/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: msFrontendCircuitBreaker
+                fallbackUri: forward:/fallback
+            - AuthenticationFilter
+
+server:
+  port: 9504
+
+
+  cloud:
+    discovery:
+      enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9502/eureka
