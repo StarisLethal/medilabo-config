@@ -33,10 +33,6 @@ spring:
           predicates:
             - Path=/ms-frontend/**
           filters:
-            - name: CircuitBreaker
-              args:
-                name: msFrontendCircuitBreaker
-                fallbackUri: forward:/fallback
             - AuthenticationFilter
 
 server:
