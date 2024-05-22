@@ -10,30 +10,24 @@ spring:
           enabled: true
           lower-case-service-id: false
       routes:
-        - id: MS-AUTHSERV
-          uri: lb://MS-AUTHSERV
-          predicates:
-            - Path=/auth/**
         - id: MS-PATIENTS
           uri: lb://MS-PATIENTS
           predicates:
             - Path=/patients/**
           filters:
             - PrefixPath=/api/v1
-            - AuthenticationFilter
         - id: MS-PATIENTNOTES
           uri: lb://MS-PATIENTNOTES
           predicates:
             - Path=/patientNotes/**
           filters:
             - PrefixPath=/api/v1
-            - AuthenticationFilter
         - id: MS-FRONTEND
           uri: lb://MS-FRONTEND
           predicates:
             - Path=/ms-frontend/**
-          filters:
-            - AuthenticationFilter
+      default-filters:
+        - TokenRelay
 
 server:
   port: 9504
