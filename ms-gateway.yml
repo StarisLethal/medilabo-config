@@ -16,14 +16,14 @@ spring:
             - Path=/patients/**
           filters:
             - PrefixPath=/api/v1
-
+            - name: SessionForwardingFilter
         - id: MS-PATIENTNOTES
           uri: lb://MS-PATIENTNOTES
           predicates:
             - Path=/patientNotes/**
           filters:
             - PrefixPath=/api/v1
-
+            - name: SessionForwardingFilter
         - id: MS-FRONTEND
           uri: lb://MS-FRONTEND
           predicates:
