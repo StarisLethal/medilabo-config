@@ -3,7 +3,7 @@ spring:
     name: ms-patientNotes
   data:
     mongodb:
-      uri: mongodb://admin_note:1234@localhost:27027/db_patientNote
+      uri: mongodb://admin_note:1234@mongodb_note:27027/db_patientNote
   cloud:
     discovery:
       enabled: true
