@@ -39,4 +39,4 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:9502/eureka
+      defaultZone: http://ms-discovery:9502/eureka

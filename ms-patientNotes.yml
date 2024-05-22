@@ -8,12 +8,6 @@ spring:
     discovery:
       enabled: true
 
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${OAUTH2_ISSUER_URI}
-
 server:
   port: 9565
 
@@ -27,7 +21,7 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:9502/eureka
+      defaultZone: http://ms-discovery:9502/eureka
 
 symptoms:
   dictionary:
